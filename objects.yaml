@@ -1,0 +1,10 @@
+models:
+  Person:
+    attributes:
+      - name
+      - age
+    methods:
+      - get_age
+      - set_age
+      - get_name
+      - set_name
