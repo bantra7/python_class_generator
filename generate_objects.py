@@ -3,7 +3,7 @@ import yaml
 import os
 
 
-def get_objects_config(filename="objects.yaml"):
+def get_objects_config(filename="objects2.yaml"):
     """
     Setup configuration
     Returns config from a file.yaml
@@ -19,13 +19,12 @@ def get_objects_config(filename="objects.yaml"):
 
 def write_with_tabs(file, line, number_tab):
     new_line = '{}{}'.format('    '*number_tab, line)
-    # new_line = '{}{}'.format(''.join(['\t'] * number_tab), line)
     file.write(new_line)
 
 
 def main():
     parser = argparse.ArgumentParser(description='Generate Python objects from yaml')
-    parser.add_argument('--inputfile', type=str, default='objects.yaml',
+    parser.add_argument('--inputfile', type=str, default='objects2.yaml',
                         help='input file in yaml')
 
     args = parser.parse_args()
@@ -56,8 +55,6 @@ def main():
                 write_with_tabs(f, line, tab)
                 tab -= 1
                 write_with_tabs(f, '\n', tab)
-
-
 
 
 if __name__ == '__main__':
